@@ -15,3 +15,14 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: main.tex
+      
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: PDF
+          path: ./main.pdf
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v2.0.9
+        with: 
+          name: PDF 
+          path: path/to/PDF
